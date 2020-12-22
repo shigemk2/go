@@ -183,7 +183,7 @@ fi
 rm -f cmd/dist/dist
 echo $GOOS
 echo $GOARCH
-GOROOT="$GOROOT_BOOTSTRAP" GO111MODULE=off "$GOROOT_BOOTSTRAP/bin/go" build -o cmd/dist/dist ./cmd/dist
+GOROOT="$GOROOT_BOOTSTRAP" GO111MODULE=off "$GOROOT_BOOTSTRAP/bin/go" build -v -o cmd/dist/dist ./cmd/dist
 
 # -e doesn't propagate out of eval, so check success by hand.
 eval $(./cmd/dist/dist env -p || echo FAIL=true)
